@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.test.projetAPI.ProjetApiApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.302 s <<< FAILURE! - in com.test.projetAPI.ProjetApiApplicationTests
+com.test.projetAPI.ProjetApiApplicationTests  Time elapsed: 0.298 s  <<< ERROR!
+java.lang.IllegalStateException: Configuration error: found multiple declarations of @BootstrapWith for test class [com.test.projetAPI.ProjetApiApplicationTests]: [@org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper)]
+
