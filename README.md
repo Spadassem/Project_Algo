@@ -1,7 +1,7 @@
 # Project_Algo
 
 Ce projet contient la solution pour le projet JAVA/Spring, nommé projetAPI et les scripts à exécuter dans une base de données MySQL
- Il exopse un webservice qui permet de récupérer tout les workflowCategories, et un webservice qui permet de récupérer les workflow avec la possibilitée de les filtrer selon leurs nom, etat ou leurs ids.
+ Il expose un webservice qui permet de récupérer tout les workflowCategories, et un webservice qui permet de récupérer les workflow avec la possibilitée de les filtrer selon leurs nom, etat ou leurs ids.
 
 Vous devez suivre ce processus chaque fois que vous souhaitez exécuter le projet :
 - Executer les scripts suivants projetapi_workflow_category.sql , projetapi_workflow_workflow_categories.sql et projetapi_workflow.sql  dans une base de donnée MySQL
