@@ -1,20 +1,16 @@
 package com.testtechnical.java;
 
-import java.util.stream.IntStream;
+import java.util.Scanner;
 
 public class Algo2 {
 
-	public static int[] solution(int A[], int B[]) { // on peut declarer B de type short pour l'optimisation
+	public static int[] solution(int A[], int B[]) {
 
 		int C[] = new int[A.length];
-		if (A.length != B.length || !IntStream.of(A).allMatch(a -> (a >= 0 && a <= 50000))
-				|| !IntStream.of(B).allMatch(b -> (b >= 0 && b <= 30))) {
-			System.out.println("invalid inputs");
-		} else {
-			for (int i = 0; i < A.length; i++) {
-				C[i] = countWays(A[i]) % (B[i] * 2);
-			}
+		for (int i = 0; i < A.length; i++) {
+			C[i] = countWays(A[i]) % (B[i] * 2);
 		}
+
 		return C;
 	}
 
@@ -32,20 +28,21 @@ public class Algo2 {
 	private static int countWays(int s) {
 		return fib(s + 1);
 	}
-	public static void main(String[] args) {
 
-		int A[] = new int[5];
-		int B[] = new int[5];
-		A[0] = 4;
-		B[0] = 3;
-		A[1] = 4;
-		B[1] = 2;
-		A[2] = 5;
-		B[2] = 4;
-		A[3] = 5;
-		B[3] = 3;
-		A[4] = 1;
-		B[4] = 1;
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("N = ");
+		int N = Integer.parseInt(sc.nextLine());
+
+		int A[] = new int[N];
+		int B[] = new int[N];
+		for (int i = 0; i < N; i++) {
+			System.out.println("A[" + i + "] = ");
+			A[i] = Integer.parseInt(sc.nextLine());
+			System.out.println("B[" + i + "] = ");
+			B[i] = Integer.parseInt(sc.nextLine());
+		}
 
 		System.out.println(display(solution(A, B)));// resultat prévue : [5,1,0,2,1]
 

@@ -1,29 +1,28 @@
 package com.testtechnical.java;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
+import java.util.Scanner;
 
 public class Algo1 {
 
-	public static int[] solution(int N, int[] A) { 
+	public static int[] solution(int N, int[] A) {
 
 		int[] counters = new int[N];
-		if ((N < 0 && N > 100000) || !IntStream.of(A).allMatch(a -> (a >= 1 && a <= N + 1))
-				|| (A.length < 0 && A.length > 100000)) {
-			System.out.println("invalid inputs");
-		} else {
-			calculate(counters, A, N);
-		}
+		calculate(counters, A, N);
 		return counters;
 	}
 
 	private static void calculate(int[] counters, int[] A, int N) {
+		
+		int max = 0;
 		for (int i = 0; i < A.length; i++) {
 			if (1 <= A[i] && A[i] < N) {
 				counters[A[i] - 1]++;
+				if (max < counters[A[i] - 1]) {
+					max = counters[A[i] - 1];
+				}
 			}
 			if (A[i] == N + 1) {
-				int max = Arrays.stream(counters).max().getAsInt();
 				Arrays.fill(counters, max);
 			}
 		}
@@ -31,16 +30,19 @@ public class Algo1 {
 	}
 
 	public static void main(String[] args) {
-		int A[] = new int[7];
-		A[0] = 3;
-		A[1] = 4;
-		A[2] = 4;
-		A[3] = 6;
-		A[4] = 1;
-		A[5] = 4;
-		A[6] = 4;
 
-		System.out.println(display(solution(5, A)));
+		Scanner sc = new Scanner(System.in);
+		System.out.println("N = ");
+		int N = Integer.parseInt(sc.nextLine());
+		System.out.println("M = ");
+		int M = Integer.parseInt(sc.nextLine());
+		int A[] = new int[M];
+		for (int i = 0; i < M; i++) {
+			System.out.println("A[" + i + "] = ");
+			A[i] = Integer.parseInt(sc.nextLine());
+		}
+		System.out.println(display(solution(N, A)));
+
 	}
 
 	private static String display(int C[]) {

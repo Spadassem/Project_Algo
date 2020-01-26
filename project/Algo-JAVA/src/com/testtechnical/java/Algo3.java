@@ -1,13 +1,19 @@
 package com.testtechnical.java;
 
+import java.util.Scanner;
+
 public class Algo3{
 
 	public static void main(String[] args) {
-		int A[] = new int[4];
-		A[0] = 2;
-		A[1] = 5;
-		A[2] = 0;
-		A[3] = 9;
+    	
+		Scanner sc = new Scanner(System.in);
+		System.out.println("N = ");
+		int N = Integer.parseInt(sc.nextLine());
+		int A[] = new int[N];
+		for (int i = 0; i < N; i++) {
+			System.out.println("A[" + i + "] = ");
+			A[i] = Integer.parseInt(sc.nextLine());
+		}
 
 		System.out.println(solution(A));
 	}
@@ -71,3 +77,16 @@ public class Algo3{
 		return result;
 	}
 }
+
+//    private static int[] init() {
+//    	int N = 0;
+//		Scanner sc = new Scanner(System.in);
+//		 N = Integer.parseInt(sc.nextLine());
+//		int A[] = new int[N];
+//		for (int i = 0; i < N; i++) {
+//			System.out.println("A[" + i + "] = ");
+//			A[i] = Integer.parseInt(sc.nextLine());
+//		}
+//		return A;
+//    	
+//    }
